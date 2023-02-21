@@ -29,17 +29,17 @@ public class Rey implements Piezas{
 	    
 	    if (posicionAMover.equals(" *  ")) {
 	        // Reemplazamos la posición actual con un asterisco
-	        Tablero.tablero[fila][columna] = "*";
+	        Tablero.tablero[fila][columna] = " *  ";
 	        // Movemos la pieza a la posición deseada
 	        Tablero.tablero[moverFila][moverColumna] = posicionIngresada;
 	    }
 	    
-	    return posicionAMover;
+	    return "";
 	}
 
 	@Override
 	public double comer() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 

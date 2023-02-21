@@ -4,10 +4,17 @@ import java.util.Scanner;
 
 public class Jugador {
 	
-	String color;
+	private String color;
 	
 	public Jugador(String color) {
-		this.color=color;
+		this.setColor(color);
+	}
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 	public static void usuario(){
@@ -25,9 +32,9 @@ public class Jugador {
 			System.out.println("Has seleccionado jugar con Negras.");
 			a=false;
 			}else {
-			System.out.println("Numero incorrecto, introduzca un numero valido");
-			
+			System.out.println("Numero incorrecto, introduzca un numero valido");			
 			}
 		}
 	}
+
 }

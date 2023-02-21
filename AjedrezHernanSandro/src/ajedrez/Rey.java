@@ -1,8 +1,15 @@
 package ajedrez;
 import java.util.Scanner;
 
-public class Rey implements Piezas{
+public class Rey extends Juego implements Piezas{
 	
+
+
+	public Rey(String fichas) {
+		super(fichas);
+		
+	}
+
 	Tablero matriz = new Tablero();
 	String[][] miMatriz = Tablero.tablero;
 	
@@ -11,22 +18,13 @@ public class Rey implements Piezas{
 	
 	@Override
 	public String mover() {
-	    System.out.println("");
-	    System.out.println("");
-	    System.out.println("Ingrese la fila de la pieza: ");
-	    int fila = src.nextInt();
-	    System.out.println("Ingrese la columna de la pieza: ");
-	    int columna = src.nextInt();
-	    String posicionIngresada = Tablero.tablero[fila][columna];
-	    System.out.println(posicionIngresada);
-	    
-	    System.out.println("");
-	    System.out.println("A qué fila quieres mover: ");
-	    int moverFila = src.nextInt();
-	    System.out.println("A qué columna quieres mover: ");
-	    int moverColumna = src.nextInt();
-	    String posicionAMover = Tablero.tablero[moverFila][moverColumna];
-	    
+	   String posicionIngresada =Juego.PosiIngresada();
+	   String posicionAMover =Juego.PosiMover();
+	   int fila =Juego.Fila();
+	   int columna =Juego.Columna();
+	   int moverFila =Juego.FilaAmover();
+	   int moverColumna =Juego.ColumnAmover();	
+	   
 	    if (posicionAMover.equals(" *  ")) {
 	        // Reemplazamos la posición actual con un asterisco
 	        Tablero.tablero[fila][columna] = " *  ";

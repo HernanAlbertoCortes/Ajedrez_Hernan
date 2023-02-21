@@ -11,6 +11,7 @@ public class Main_Ajedrez {
 	    String cogerPosi = king.mover();
 	    System.out.println(cogerPosi);
 	    Tablero.mostrar();
+
 	}
 
 }

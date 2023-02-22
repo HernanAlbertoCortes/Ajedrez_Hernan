@@ -20,8 +20,7 @@ public class Jugador {
 	public static void usuario(){
 		Scanner src= new Scanner(System.in);
 		boolean a =true;
-		while(a) {
-			System.out.println("");
+		while(a) {			
 			System.out.println("Antes de jugar elija el color.");
 			System.out.println("Ingrese 1 para Blancas y 2 para Negras.");
 			int usuario = src.nextInt();
@@ -32,8 +31,9 @@ public class Jugador {
 			System.out.println("Has seleccionado jugar con Negras.");
 			a=false;
 			}else {
-			System.out.println("Numero incorrecto, introduzca un numero valido");			
+			System.out.println("Numero incorrecto, introduzca un numero valido");	
 			}
+			System.out.println("");
 		}
 	}
 

@@ -35,14 +35,17 @@ public class Juego {
 		return columna;
 	}
 
-	public static String PosiIngresada() {
-		Scanner src = new Scanner(System.in);
+	public static String[] PosiIngresada() {
+		String[] datosPosIngresada=new String [3];
 		int fila=Juego.Fila();
 		int columna=Juego.Columna();
 		String posicionIngresada = Tablero.tablero[fila][columna];
+		datosPosIngresada[0] = posicionIngresada;
+		datosPosIngresada[1] = Integer.toString(fila);
+		datosPosIngresada[2] = Integer.toString(columna);
 		System.out.println(posicionIngresada);
 
-		return posicionIngresada;
+		return datosPosIngresada;
 
 	}
 	// metodo para recibir fila
@@ -50,23 +53,27 @@ public class Juego {
 		Scanner src = new Scanner(System.in);
 		System.out.println("");
 		System.out.println("Ingrese la fila donde deseas mover: ");
-		int fila = src.nextInt();
-		return fila;
+		int filaA = src.nextInt();
+		return filaA;
 	}
 	// metodo para recibir columna
 	public static int ColumnAmover() {
 		Scanner src = new Scanner(System.in);
 		System.out.println("");
 		System.out.println("Ingrese la columna donde deseas mover: ");
-		int columna = src.nextInt();
-		return columna;
+		int columnaA = src.nextInt();
+		return columnaA;
 	}
-	public static String PosiMover() {
-		Scanner src = new Scanner(System.in);
+	public static String[] PosiMover() {
+		String[] datosPosiMover=new String [3];
 		int moverFila=Juego.FilaAmover();
 		int moverColumna=Juego.ColumnAmover();
 		String posicionAMover = Tablero.tablero[moverFila][moverColumna];
-
-		return posicionAMover;
+		datosPosiMover[0] =  posicionAMover;
+		datosPosiMover[1] = Integer.toString(moverFila);
+		datosPosiMover[2] = Integer.toString(moverColumna);
+		System.out.println(posicionAMover);
+		
+		return datosPosiMover;
 	}
 }

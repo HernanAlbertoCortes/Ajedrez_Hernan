@@ -62,15 +62,44 @@ public class Tablero {
 	}
 
 	public static void mostrar() {
-	
-        for (int i = 0; i < 9; i++) {
-            System.out.println("");
-            for (int j = 0; j < 9; j++) {
-                if (tablero[i][j] == null || tablero[i][j].equals("")) {
-                    tablero[i][j] = " *  ";
-                }
-                System.out.print(tablero[i][j]);
-            }
-        }
- }
+
+		for (int i = 0; i < 9; i++) {
+			System.out.println("");
+			for (int j = 0; j < 9; j++) {
+				if (tablero[i][j] == null || tablero[i][j].equals("")) {
+					tablero[i][j] = " *  ";
+				}
+				System.out.print(tablero[i][j]);
+			}
+		}
+	}
+
+	public static boolean comprobacionBlancas() {
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (tablero[i][j] != null) {
+					if (tablero[i][j].contains("b")) {
+						//System.out.println("b");
+					}
+				}
+			}
+		}
+		return true;
+	}
+
+	public static boolean comprobacionNegras() {
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (tablero[i][j] != null) {
+
+					if (tablero[i][j].contains("n")) {
+						// System.out.println("n");
+					}
+				}
+			}
+
+		}
+		return true;
+
+	}
 }

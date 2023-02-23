@@ -11,10 +11,13 @@ public class Rey extends Juego implements Piezas{
 	String[][] miMatriz = Tablero.tablero;	
 	Scanner src= new Scanner(System.in);
 	
+	
 	@Override
 	public String mover() {
 	   String[] posicionIngresada =Juego.PosiIngresada();
 	   String [] posicionAMover =Juego.PosiMover();
+	   
+	   
 	   
 	    if (posicionAMover[0].equals(" *  ")) {
 	        // Reemplazamos la posición actual con un asterisco

@@ -22,7 +22,7 @@ public class Juego {
 	public static int Fila() {
 		Scanner src = new Scanner(System.in);
 		System.out.println("");
-		System.out.println("Ingrese la fila de la pieza que quieres mover: ");
+		System.out.println("Introduzca la fila de la figura que quieres usar");
 		int fila = src.nextInt();
 		return fila;
 	}
@@ -30,7 +30,7 @@ public class Juego {
 	public static int Columna() {
 		Scanner src = new Scanner(System.in);
 		System.out.println("");
-		System.out.println("Ingrese la columna de la pieza que quieres mover: ");
+		System.out.println("Introduzca la columna de la figura que quieres usar");
 		int columna = src.nextInt();
 		return columna;
 	}
@@ -52,7 +52,7 @@ public class Juego {
 	public static int FilaAmover() {
 		Scanner src = new Scanner(System.in);
 		System.out.println("");
-		System.out.println("Ingrese la fila donde deseas mover: ");
+		System.out.println("Introduzca la fila donde quieres mover la pieza seleccionada");
 		int filaA = src.nextInt();
 		return filaA;
 	}
@@ -60,7 +60,7 @@ public class Juego {
 	public static int ColumnAmover() {
 		Scanner src = new Scanner(System.in);
 		System.out.println("");
-		System.out.println("Ingrese la columna donde deseas mover: ");
+		System.out.println("Introduzca la columna donde quieres mover la pieza seleccionada");
 		int columnaA = src.nextInt();
 		return columnaA;
 	}
@@ -72,7 +72,6 @@ public class Juego {
 		datosPosiMover[0] =  posicionAMover;
 		datosPosiMover[1] = Integer.toString(moverFila);
 		datosPosiMover[2] = Integer.toString(moverColumna);
-		System.out.println(posicionAMover);
 		
 		return datosPosiMover;
 	}

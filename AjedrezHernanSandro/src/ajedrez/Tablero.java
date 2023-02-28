@@ -73,33 +73,19 @@ public class Tablero {
 			}
 		}
 	}
-
-	public static boolean comprobacionBlancas() {
-		for (int i = 0; i < 9; i++) {
-			for (int j = 0; j < 9; j++) {
-				if (tablero[i][j] != null) {
-					if (tablero[i][j].contains("b")) {
-						//System.out.println("b");
-					}
-				}
-			}
-		}
-		return true;
+	
+	public static void comprobarColorFicha() {
+	    String[] colorFicha = Juego.PosiIngresada();
+	    
+	    if (colorFicha[0].contains("b")) {
+	        System.out.println("La ficha seleccionada es blanca");
+	        
+	    } else if (colorFicha[0].contains("n")) {
+	        System.out.println("La ficha seleccionada es negra");
+	    } else {
+	        System.out.println("No hay ficha en la posición seleccionada");
+	    }
 	}
 
-	public static boolean comprobacionNegras() {
-		for (int i = 0; i < 9; i++) {
-			for (int j = 0; j < 9; j++) {
-				if (tablero[i][j] != null) {
-
-					if (tablero[i][j].contains("n")) {
-						// System.out.println("n");
-					}
-				}
-			}
-
-		}
-		return true;
-
-	}
+	
 }

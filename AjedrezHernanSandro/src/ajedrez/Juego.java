@@ -26,6 +26,7 @@ public class Juego {
 		int fila = src.nextInt();
 		return fila;
 	}
+
 	// metodo para recibir columna
 	public static int Columna() {
 		Scanner src = new Scanner(System.in);
@@ -36,18 +37,29 @@ public class Juego {
 	}
 
 	public static String[] PosiIngresada() {
-		String[] datosPosIngresada=new String [3];
-		int fila=Juego.Fila();
-		int columna=Juego.Columna();
+
+		String[] datosPosIngresada = new String[3];
+		int fila = Juego.Fila();
+		int columna = Juego.Columna();
 		String posicionIngresada = Tablero.tablero[fila][columna];
 		datosPosIngresada[0] = posicionIngresada;
 		datosPosIngresada[1] = Integer.toString(fila);
 		datosPosIngresada[2] = Integer.toString(columna);
 		System.out.println(posicionIngresada);
+		// public static void comprobarColorFicha() {
+
+		if (posicionIngresada.contains("b")) {
+			System.out.println("La ficha seleccionada es blanca");
+
+		} else if (posicionIngresada.contains("n")) {
+			System.out.println("La ficha seleccionada es negra");
+		} else {
+			System.out.println("No hay ficha en la posición seleccionada");
+		}
 
 		return datosPosIngresada;
-
 	}
+
 	// metodo para recibir fila
 	public static int FilaAmover() {
 		Scanner src = new Scanner(System.in);
@@ -56,6 +68,7 @@ public class Juego {
 		int filaA = src.nextInt();
 		return filaA;
 	}
+
 	// metodo para recibir columna
 	public static int ColumnAmover() {
 		Scanner src = new Scanner(System.in);
@@ -64,15 +77,16 @@ public class Juego {
 		int columnaA = src.nextInt();
 		return columnaA;
 	}
+
 	public static String[] PosiMover() {
-		String[] datosPosiMover=new String [3];
-		int moverFila=Juego.FilaAmover();
-		int moverColumna=Juego.ColumnAmover();
+		String[] datosPosiMover = new String[3];
+		int moverFila = Juego.FilaAmover();
+		int moverColumna = Juego.ColumnAmover();
 		String posicionAMover = Tablero.tablero[moverFila][moverColumna];
-		datosPosiMover[0] =  posicionAMover;
+		datosPosiMover[0] = posicionAMover;
 		datosPosiMover[1] = Integer.toString(moverFila);
 		datosPosiMover[2] = Integer.toString(moverColumna);
-		
+
 		return datosPosiMover;
 	}
 }

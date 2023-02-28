@@ -53,7 +53,6 @@ public class Jugador {
 
 			} else if (usuario.equals("NEGRO")) {
 				System.out.println("Has elegido Fichas Negras");
-				Tablero.comprobacionNegras();
 				a = false;
 
 			} else {

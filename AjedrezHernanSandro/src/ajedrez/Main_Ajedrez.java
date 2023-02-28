@@ -7,10 +7,10 @@ public class Main_Ajedrez {
 		Jugador.usuario();
 		Tablero.ini();
 		Tablero.mostrar();
-		
+		 //Tablero.comprobarColorFicha();
 		Rey king = new Rey(null);
 	    String cogerPosi = king.mover();
-	   // System.out.println(cogerPosi);
+	  
 	    
 	    Tablero.mostrar();
 

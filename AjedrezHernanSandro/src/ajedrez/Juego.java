@@ -46,18 +46,28 @@ public class Juego {
 		datosPosIngresada[1] = Integer.toString(fila);
 		datosPosIngresada[2] = Integer.toString(columna);
 		System.out.println(posicionIngresada);
-		// public static void comprobarColorFicha() {
-
-		if (posicionIngresada.contains("b")) {
+		
+		return datosPosIngresada;
+	}
+	
+	//metodo para guardar el color seleccionado
+	public static String colorseleccion() {
+		
+		String[] posicionIngresada =Juego.PosiIngresada();
+		String colorseleccionado = "";
+		
+		if (posicionIngresada[0].contains("b")) {
 			System.out.println("La ficha seleccionada es blanca");
+			colorseleccionado= "BLANCO";
 
-		} else if (posicionIngresada.contains("n")) {
+		} else if (posicionIngresada[0].contains("n")) {
 			System.out.println("La ficha seleccionada es negra");
+			colorseleccionado= "NEGRO";
 		} else {
 			System.out.println("No hay ficha en la posición seleccionada");
 		}
-
-		return datosPosIngresada;
+				
+		return colorseleccionado;
 	}
 
 	// metodo para recibir fila
@@ -79,6 +89,15 @@ public class Juego {
 	}
 
 	public static String[] PosiMover() {
+		String colorseleccion =Juego.colorseleccion();
+		String colorinicial = Jugador.usuario();
+		boolean a=true;
+		while(a)
+			
+		if(!colorseleccion.equals(colorinicial)) {
+			break;
+		}
+		
 		String[] datosPosiMover = new String[3];
 		int moverFila = Juego.FilaAmover();
 		int moverColumna = Juego.ColumnAmover();

@@ -38,10 +38,9 @@ public class Jugador {
 		this.color = color;
 	}
 
-	public static void usuario() {
+	public static String usuario() {
 		Scanner src = new Scanner(System.in);
-		boolean a = true;
-		while (a) {
+		
 			System.out.println("Elija el color :");
 			System.out.println("Blanco o Negro");
 			String usuario = src.next().toUpperCase();
@@ -49,17 +48,18 @@ public class Jugador {
 			if (usuario.equals("BLANCO")) {
 				System.out.println("Has elegido Fichas Blancas");
 				
-				a = false;
 
 			} else if (usuario.equals("NEGRO")) {
 				System.out.println("Has elegido Fichas Negras");
-				a = false;
+
 
 			} else {
 				System.out.println("Opcion incorrecta. Vuelve a introducirlo");
 			}
 			System.out.println("");
+			
+			return usuario;
 		}
-	}
+	
 
 }

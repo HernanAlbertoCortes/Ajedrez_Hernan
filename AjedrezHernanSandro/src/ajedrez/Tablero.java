@@ -73,19 +73,19 @@ public class Tablero {
 			}
 		}
 	}
-	
-	public static void comprobarColorFicha() {
-	    String[] colorFicha = Juego.PosiIngresada();
-	    
-	    if (colorFicha[0].contains("b")) {
-	        System.out.println("La ficha seleccionada es blanca");
-	        
-	    } else if (colorFicha[0].contains("n")) {
-	        System.out.println("La ficha seleccionada es negra");
-	    } else {
-	        System.out.println("No hay ficha en la posición seleccionada");
-	    }
-	}
+} 
 
-	
-}
+/*
+ * public static void comprobarColorFicha() { String[] colorFicha =
+ * Juego.PosiIngresada();
+ * 
+ * if (colorFicha[0].contains("b")) {
+ * System.out.println("La ficha seleccionada es blanca");
+ * 
+ * } else if (colorFicha[0].contains("n")) {
+ * System.out.println("La ficha seleccionada es negra"); } else {
+ * System.out.println("No hay ficha en la posición seleccionada"); } }
+ * 
+ * 
+ * }
+ */

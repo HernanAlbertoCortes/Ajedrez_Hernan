@@ -45,8 +45,8 @@ public class Juego {
 		datosPosIngresada[0] = posicionIngresada;
 		datosPosIngresada[1] = Integer.toString(fila);
 		datosPosIngresada[2] = Integer.toString(columna);
-		System.out.println(posicionIngresada);
-		
+		System.out.println("Has seleccionado la siguiente pieza : " +posicionIngresada);
+		System.out.println("lalala1");
 		return datosPosIngresada;
 	}
 	
@@ -91,12 +91,12 @@ public class Juego {
 	public static String[] PosiMover() {
 		String colorseleccion =Juego.colorseleccion();
 		String colorinicial = Jugador.usuario();
-		boolean a=true;
+		/*boolean a=true;
 		while(a)
 			
 		if(!colorseleccion.equals(colorinicial)) {
 			break;
-		}
+		}*/
 		
 		String[] datosPosiMover = new String[3];
 		int moverFila = Juego.FilaAmover();
@@ -109,3 +109,5 @@ public class Juego {
 		return datosPosiMover;
 	}
 }
+
+

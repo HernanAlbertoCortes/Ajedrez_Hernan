@@ -36,7 +36,6 @@ public class Jugador {
 			String colorJugador = src.nextLine();
 			//Asignar ese color al jugador
 			Jugador colorAsignado = new Jugador(colorJugador);
-			System.out.println("lalal");
 
 		} else {
 			System.out.println("Opcion incorrecta. Vuelve a introducirlo");

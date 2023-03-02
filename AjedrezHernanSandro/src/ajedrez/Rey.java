@@ -13,7 +13,7 @@ public class Rey extends Juego implements Piezas{
 	
 	@Override
 	public String mover() {
-	   String[] posicionIngresada =Juego.PosiIngresada();
+		String[] posicionIngresada =Juego.PosiIngresada();
 	   
 	   String [] posicionAMover =Juego.PosiMover();
 	   

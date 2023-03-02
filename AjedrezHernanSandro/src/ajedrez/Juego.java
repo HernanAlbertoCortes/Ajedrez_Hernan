@@ -19,95 +19,67 @@ public class Juego {
 	}
 
 	// metodo para recibir fila
-	public static int Fila() {
-		Scanner src = new Scanner(System.in);
-		System.out.println("");
-		System.out.println("Introduzca la fila de la figura que quieres usar");
-		int fila = src.nextInt();
-		return fila;
+	public static int Fila(int fIngresada) {
+		return fIngresada;
 	}
 
 	// metodo para recibir columna
-	public static int Columna() {
-		Scanner src = new Scanner(System.in);
-		System.out.println("");
-		System.out.println("Introduzca la columna de la figura que quieres usar");
-		int columna = src.nextInt();
-		return columna;
+	public static int Columna(int cIngresada) {
+		return cIngresada;
 	}
 
-	public static String[] PosiIngresada() {
+	public static String[] PosiIngresada(int f, int c) {
 
 		String[] datosPosIngresada = new String[3];
-		int fila = Juego.Fila();
-		int columna = Juego.Columna();
-		String posicionIngresada = Tablero.tablero[fila][columna];
+		String posicionIngresada = Tablero.tablero[f][c];
 		datosPosIngresada[0] = posicionIngresada;
-		datosPosIngresada[1] = Integer.toString(fila);
-		datosPosIngresada[2] = Integer.toString(columna);
-		System.out.println("Has seleccionado la siguiente pieza : " +posicionIngresada);
-		System.out.println("lalala1");
+		datosPosIngresada[1] = Integer.toString(f);
+		datosPosIngresada[2] = Integer.toString(c);
+		System.out.println("Has seleccionado la siguiente pieza : " + posicionIngresada);
 		return datosPosIngresada;
 	}
-	
-	//metodo para guardar el color seleccionado
-	public static String colorseleccion() {
-		
-		//String[] posicionIngresada =Juego.PosiIngresada();
-		String colorseleccionado = "";
-		
-		if (Juego.PosiIngresada()[0].contains("b")) {
-			System.out.println("La ficha seleccionada es blanca");
-			colorseleccionado= "BLANCO";
 
-		} else if (Juego.PosiIngresada()[0].contains("n")) {
+	// metodo para guardar el color seleccionado
+	public static String colorseleccion(String[] colorF) {
+
+		// String[] posicionIngresada =Juego.PosiIngresada();
+		String colorseleccionado = "";
+
+		if (colorF[0].contains("b")) {
+			System.out.println("La ficha seleccionada es blanca");
+			colorseleccionado = "BLANCO";
+
+		} else if (colorF[0].contains("n")) {
 			System.out.println("La ficha seleccionada es negra");
-			colorseleccionado= "NEGRO";
+			colorseleccionado = "NEGRO";
 		} else {
 			System.out.println("No hay ficha en la posición seleccionada");
 		}
-				
+
 		return colorseleccionado;
 	}
 
 	// metodo para recibir fila
-	public static int FilaAmover() {
-		Scanner src = new Scanner(System.in);
-		System.out.println("");
-		System.out.println("Introduzca la fila donde quieres mover la pieza seleccionada");
-		int filaA = src.nextInt();
-		return filaA;
+	public static int FilaAmover(int fIngresadaMover) {
+		return fIngresadaMover;
 	}
 
 	// metodo para recibir columna
-	public static int ColumnAmover() {
-		Scanner src = new Scanner(System.in);
-		System.out.println("");
-		System.out.println("Introduzca la columna donde quieres mover la pieza seleccionada");
-		int columnaA = src.nextInt();
-		return columnaA;
+	public static int ColumnAmover(int cIngresadaMover) {
+		return cIngresadaMover;
+
 	}
 
-	public static String[] PosiMover() {
-		String colorseleccion =Juego.colorseleccion();
+	public static String[] PosiMover(int fMover, int cMover) {
+		String colorseleccion = Juego.colorseleccion();
 		String colorinicial = Jugador.usuario();
-		/*boolean a=true;
-		while(a)
-			
-		if(!colorseleccion.equals(colorinicial)) {
-			break;
-		}*/
-		
+
 		String[] datosPosiMover = new String[3];
-		int moverFila = Juego.FilaAmover();
-		int moverColumna = Juego.ColumnAmover();
-		String posicionAMover = Tablero.tablero[moverFila][moverColumna];
+		String posicionAMover = Tablero.tablero[fMover][cMover];
 		datosPosiMover[0] = posicionAMover;
-		datosPosiMover[1] = Integer.toString(moverFila);
-		datosPosiMover[2] = Integer.toString(moverColumna);
+		datosPosiMover[1] = Integer.toString(cMover);
+		datosPosiMover[2] = Integer.toString(fMover);
 
 		return datosPosiMover;
 	}
 }
-
-

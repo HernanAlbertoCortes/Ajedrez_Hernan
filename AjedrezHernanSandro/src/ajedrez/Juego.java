@@ -53,14 +53,14 @@ public class Juego {
 	//metodo para guardar el color seleccionado
 	public static String colorseleccion() {
 		
-		String[] posicionIngresada =Juego.PosiIngresada();
+		//String[] posicionIngresada =Juego.PosiIngresada();
 		String colorseleccionado = "";
 		
-		if (posicionIngresada[0].contains("b")) {
+		if (Juego.PosiIngresada()[0].contains("b")) {
 			System.out.println("La ficha seleccionada es blanca");
 			colorseleccionado= "BLANCO";
 
-		} else if (posicionIngresada[0].contains("n")) {
+		} else if (Juego.PosiIngresada()[0].contains("n")) {
 			System.out.println("La ficha seleccionada es negra");
 			colorseleccionado= "NEGRO";
 		} else {

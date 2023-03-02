@@ -10,7 +10,7 @@ public class Main_Ajedrez {
 		Rey king = new Rey(null);
 		String cogerPosi = king.mover();
 
-		//Tablero.mostrar();
+		Tablero.mostrar();
 
 	}
 

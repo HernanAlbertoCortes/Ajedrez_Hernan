@@ -4,18 +4,7 @@ import java.util.Scanner;
 
 public class Juego {
 
-	private String fichas;
-
-	public Juego(String fichas) {
-		this.setFichas(fichas);
-	}
-
-	public String getFichas() {
-		return fichas;
-	}
-
-	public void setFichas(String fichas) {
-		this.fichas = fichas;
+	public Juego() {	
 	}
 
 	// metodo para recibir fila
@@ -42,7 +31,6 @@ public class Juego {
 	// metodo para guardar el color seleccionado
 	public static String colorseleccion(String[] colorF) {
 
-		// String[] posicionIngresada =Juego.PosiIngresada();
 		String colorseleccionado = "";
 
 		if (colorF[0].contains("b")) {
@@ -71,8 +59,6 @@ public class Juego {
 	}
 
 	public static String[] PosiMover(int fMover, int cMover) {
-		String colorseleccion = Juego.colorseleccion();
-		String colorinicial = Jugador.usuario();
 
 		String[] datosPosiMover = new String[3];
 		String posicionAMover = Tablero.tablero[fMover][cMover];

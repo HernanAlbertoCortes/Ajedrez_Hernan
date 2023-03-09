@@ -3,33 +3,30 @@ package ajedrez;
 public class Peon extends Juego implements Piezas {
 	private String[] posiOriginal;
 	private String[] posiAmover;
-	private String boo;
 
 	
-	public Peon(String[] posiOriginal, String[] posiAmover, String boo) {
+	public Peon(String[] posiOriginal, String[] posiAmover) {
 		this.posiOriginal=posiOriginal;
 		this.posiAmover=posiAmover;
-		this. boo= boo;
 	}
 	
 	@Override
-	public String mover() {
-	   
-	    if (boo.contains(boo) && Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] == " *  " ){
-	    	
-	    	Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] = " bP ";	    	
-	    	// Reemplazamos la posición actual con un asterisco
-	        Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
-	        
+	public String mover (boolean turnoBlancas) {
+	    String colorFicha = posiOriginal[0];
+
+	    if (turnoBlancas==true && colorFicha.equals(" bP ")) {
+	        if (Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] == " *  " ){
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] = " bP ";
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
+	        }
 	    }
-	    
-	    if (Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] == " *  "){
-	    	//mover peon de casilla
-	    	Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] = " nP ";	    	
-	    	// Reemplazamos la posición actual con un asterisco
-	        Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
-	        
+	    else if (turnoBlancas==false && colorFicha.equals(" nP ")) {
+	        if (Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] == " *  "){
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] = " nP ";
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
+	        }
 	    }
+
 	    return "";
 	}
 

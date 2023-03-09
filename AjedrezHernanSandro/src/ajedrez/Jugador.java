@@ -42,7 +42,7 @@ public class Jugador {
 		}
 		System.out.println("");
 
-		return "";
+		return usuario;
 	}
 
 }

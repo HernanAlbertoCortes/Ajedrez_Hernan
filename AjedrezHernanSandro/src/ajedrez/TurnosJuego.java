@@ -2,21 +2,24 @@ package ajedrez;
 
 public class TurnosJuego {
 
-	public static void main(String[] args) {
+	public TurnosJuego() {
+	}
+	
+	public static boolean comprobacion(String colorElegido, String colorFicha) {
+	
+		if(colorElegido.equals(colorFicha)) {
+		System.out.println("Ingresa fila a mover ");
+		int cIngresadaMover = src.nextInt();
+		Juego.ColumnAmover(cIngresadaMover);
 
-		boolean siguienteJugada = true;
+		System.out.println("Ingresa columna a mover ");
+		int fIngresadaMover = src.nextInt();
+		Juego.FilaAmover(fIngresadaMover);
 
-		while (siguienteJugada) {
-			String[] posInicial = Juego.PosiIngresada();
-			String colorSeleccionado = Juego.colorseleccion();
-
-			System.out.println("El color seleccionado es: " + colorSeleccionado);
-
-			String[] posFinal = Juego.PosiMover();
-			
-            // Aquí puedes hacer lo que sea necesario con las posiciones inicial y final FALTA PONER 
-            // por ejemplo, actualizar el estado del tablero o mostrar un mensaje de error si el movimiento no es válido FALTA PONER
-
-		}
+		Juego.PosiMover(cIngresadaMover, fIngresadaMover);
+		
+		String [] posiMovimiento =Juego.PosiMover(cIngresadaMover, fIngresadaMover);
+		
+	}
 	}
 }

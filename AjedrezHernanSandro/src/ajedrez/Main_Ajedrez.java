@@ -40,9 +40,15 @@ public class Main_Ajedrez {
 				
 				String [] posiMovimiento =Juego.PosiMover(cIngresadaMover, fIngresadaMover);
 				
-				Peon peon = new Peon (colorF, posiMovimiento);
-				
-				String cogerPosi = peon.mover(turnoBlancas);
+				if (colorF[0].equals(" bP ") || colorF[0].equals(" nP ")) {
+					Peon peon = new Peon(colorF, posiMovimiento);				
+					peon.mover(turnoBlancas);
+				} else if (colorF[0].equals(" bT ") || colorF[0].equals(" nT ")) {
+					Torre torre = new Torre(colorF, posiMovimiento);				
+					torre.mover(turnoBlancas);
+				} else {
+					System.out.println("Ficha no válida");
+				}
 
 				Tablero.mostrar();
 				

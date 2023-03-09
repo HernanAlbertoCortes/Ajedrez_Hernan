@@ -1,42 +1,55 @@
 package ajedrez;
 
-public class Torre {
+public class Torre extends Juego implements Piezas {
+	private String[] posiOriginal;
+	private String[] posiAmover;
 
-	public static boolean moverTorre(int fila, int columna, int filaA, int columnaA, String[][] tablero, int moverColumna, int moverFila) {
-
-		// Verificar si la posición actual es una torre
-		if (!tablero[fila][columna].equals(" bT ") && !tablero[fila][columna].equals(" nT ")) {
-			return false;
-		}
-
-		// Verificar si el movimiento es válido
-		if (fila != filaA && columna != columnaA) {
-			return false;
-		}
-
-		// Verificar si no hay piezas en el camino
-		if (fila == filaA) {
-			int columnaInicio = Math.min(columna, columnaA);
-			int columnaFin = Math.max(columna, columnaA);
-			for (int columnaT = columna + 1; columna < moverColumna; columna++) {
-				if (!tablero[fila][columna].equals("   ")) {
-					return false;
-				}
-			}
-		} else {
-			int filaInicio = Math.min(fila, filaA);
-			int filaFin = Math.max(fila, filaA);
-			for (int filaT = fila + 1; fila < moverFila; fila++) {
-				if (!tablero[fila][columna].equals("   ")) {
-					return false;
-				}
-			}
-		}
-
-		// Actualizar la posición de la torre en el tablero
-		tablero[filaA][columnaA] = tablero[fila][columna];
-		tablero[filaA][columnaA] = "   ";
-
-		return true;
+	
+	public Torre(String[] posiOriginal, String[] posiAmover) {
+		this.posiOriginal=posiOriginal;
+		this.posiAmover=posiAmover;
 	}
+	
+	@Override
+	public String mover (boolean turnoBlancas) {
+	    String colorFicha = posiOriginal[0];
+
+	    if (turnoBlancas==true && colorFicha.equals(" bT ")) {
+	        if (Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] == " *  " 
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +2][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +3][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +4][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +5][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +6][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +7][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +8][Integer.parseInt(posiOriginal[2])] == " *  "
+	        	){
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] = " bT ";
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
+	        }
+	    }
+	    else if (turnoBlancas==false && colorFicha.equals(" nT ")) {
+	        if (Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -2][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -3][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -4][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -5][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -6][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -7][Integer.parseInt(posiOriginal[2])] == " *  "
+		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -8][Integer.parseInt(posiOriginal[2])] == " *  "
+		        ){
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] = " nT ";
+	            Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
+	        }
+	    }
+
+	    return "";
+	}
+
+	@Override
+	public double comer() {
+//no tuvimos tiempo jeje perdon
+		return 0;
+	}
+
 }

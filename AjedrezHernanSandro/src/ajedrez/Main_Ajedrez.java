@@ -46,8 +46,9 @@ public class Main_Ajedrez {
 				} else if (colorF[0].equals(" bT ") || colorF[0].equals(" nT ")) {
 					Torre torre = new Torre(colorF, posiMovimiento);				
 					torre.mover(turnoBlancas);
-				} else {
-					System.out.println("Ficha no válida");
+				} else if (colorF[0].equals(" bC ") || colorF[0].equals(" nC ")){
+					Caballo caballo = new Caballo(posiMovimiento, colorFicha);
+					String cogerPosi = caballo.mover(turnoBlancas);
 				}
 
 				Tablero.mostrar();

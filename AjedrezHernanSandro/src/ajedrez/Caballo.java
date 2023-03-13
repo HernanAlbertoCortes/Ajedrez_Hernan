@@ -34,7 +34,7 @@ public class Caballo implements Piezas {
 				if (Tablero.tablero[filaMoverCaballo][columnaMoverCaballo].equals(" *  ")
 						|| (turnoBlancas && Tablero.tablero[filaMoverCaballo][columnaMoverCaballo].contains("n"))
 						|| (!turnoBlancas && Tablero.tablero[filaMoverCaballo][columnaMoverCaballo].contains("b"))) {
-					Tablero.tablero[filaMoverCaballo][columnaMoverCaballo] = "C" + (turnoBlancas ? "b" : "n");
+					Tablero.tablero[filaMoverCaballo][columnaMoverCaballo] =(turnoBlancas ? " b" : " n") +"C "  ;
 					Tablero.tablero[filaEelegida][columnaElegida] = " *  ";
 					posiOriginal[1] = Integer.toString(filaMoverCaballo);
 					posiOriginal[2] = Integer.toString(columnaMoverCaballo);

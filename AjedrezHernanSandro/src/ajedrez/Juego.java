@@ -63,8 +63,8 @@ public class Juego {
 		String[] datosPosiMover = new String[3];
 		String posicionAMover = Tablero.tablero[fMover][cMover];
 		datosPosiMover[0] = posicionAMover;
-		datosPosiMover[1] = Integer.toString(cMover);
-		datosPosiMover[2] = Integer.toString(fMover);
+		datosPosiMover[1] = Integer.toString(fMover);
+		datosPosiMover[2] = Integer.toString(cMover);
 
 		return datosPosiMover;
 	}

@@ -3,11 +3,19 @@ package ajedrez;
 public class Torre extends Juego implements Piezas {
 	private String[] posiOriginal;
 	private String[] posiAmover;
+	private int filaDestino;
+	private int columnaDestino;
+	private int filaOriginal;
+	private int columnaOriginal;
 
 	
-	public Torre(String[] posiOriginal, String[] posiAmover) {
+	public Torre(String[] posiOriginal, String[] posiAmover, int filaDestino, int columnaDestino, int filaOriginal, int columnaOriginal) {
 		this.posiOriginal=posiOriginal;
 		this.posiAmover=posiAmover;
+		this.filaDestino=filaDestino;
+		this.columnaDestino=columnaDestino;
+		this.filaOriginal=filaOriginal;
+		this.columnaOriginal=columnaOriginal;
 	}
 	
 	@Override
@@ -24,8 +32,8 @@ public class Torre extends Juego implements Piezas {
 	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +7][Integer.parseInt(posiOriginal[2])] == " *  "
 	        	|| Tablero.tablero[Integer.parseInt(posiOriginal[1]) +8][Integer.parseInt(posiOriginal[2])] == " *  "
 	        	){
-	            Tablero.tablero[Integer.parseInt(posiOriginal[1]) +1][Integer.parseInt(posiOriginal[2])] = " bT ";
-	            Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
+	            Tablero.tablero[filaDestino][columnaDestino] = " bT ";
+	            Tablero.tablero[filaOriginal][columnaOriginal] = " *  ";
 	        }
 	    }
 	    else if (turnoBlancas==false && colorFicha.equals(" nT ")) {
@@ -38,8 +46,8 @@ public class Torre extends Juego implements Piezas {
 		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -7][Integer.parseInt(posiOriginal[2])] == " *  "
 		        || Tablero.tablero[Integer.parseInt(posiOriginal[1]) -8][Integer.parseInt(posiOriginal[2])] == " *  "
 		        ){
-	            Tablero.tablero[Integer.parseInt(posiOriginal[1]) -1][Integer.parseInt(posiOriginal[2])] = " nT ";
-	            Tablero.tablero[Integer.parseInt(posiOriginal[1])][Integer.parseInt(posiOriginal[2])] = " *  ";
+	            Tablero.tablero[filaDestino][columnaDestino] = " nT ";
+	            Tablero.tablero[filaOriginal][columnaOriginal] = " *  ";
 	        }
 	    }
 

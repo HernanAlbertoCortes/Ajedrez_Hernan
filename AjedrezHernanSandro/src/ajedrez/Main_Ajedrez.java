@@ -17,39 +17,45 @@ public class Main_Ajedrez {
 			System.out.println("Turno de las fichas " + (turnoBlancas ? "blancas" : "negras"));
 			System.out.println("Ingresa fila");
 			int fIngresada = src.nextInt();
-			Juego.Fila(fIngresada);
 
 			System.out.println("Ingresa columna");
 			int cIngresada = src.nextInt();
-			Juego.Columna(cIngresada);
 
 			String[] colorF = Juego.PosiIngresada(fIngresada, cIngresada);
 
 			String colorFicha = Juego.colorseleccion(colorF);
 			
 			if ((turnoBlancas && colorFicha.equals("BLANCO")) || (!turnoBlancas && colorFicha.equals("NEGRO"))) {
-				System.out.println("Ingresa fila a mover ");
-				int cIngresadaMover = src.nextInt();
-				Juego.ColumnAmover(cIngresadaMover);
-
-				System.out.println("Ingresa columna a mover ");
-				int fIngresadaMover = src.nextInt();
-				Juego.FilaAmover(fIngresadaMover);
-
-				Juego.PosiMover(cIngresadaMover, fIngresadaMover);
 				
-				String [] posiMovimiento =Juego.PosiMover(cIngresadaMover, fIngresadaMover);
+				boolean movimientoValido = false;
+				
+				while (!movimientoValido) {
+				System.out.println("Ingresa fila a mover ");
+				int fIngresadaMover = src.nextInt();
+				
+				System.out.println("Ingresa columna a mover ");
+				int cIngresadaMover = src.nextInt();
+				
+				String [] posiMovimiento =Juego.PosiMover(fIngresadaMover, cIngresadaMover);
 				
 				if (colorF[0].equals(" bP ") || colorF[0].equals(" nP ")) {
 					Peon peon = new Peon(colorF, posiMovimiento);				
-					peon.mover(turnoBlancas);
+					String comparacionP=peon.mover(turnoBlancas);
+					if (comparacionP.equals("true")) {
+						movimientoValido=true;
+					}
 				} else if (colorF[0].equals(" bT ") || colorF[0].equals(" nT ")) {
-					Torre torre = new Torre(colorF, posiMovimiento);				
+					Torre torre = new Torre(colorF, posiMovimiento, cIngresadaMover, fIngresadaMover, fIngresada, cIngresada);				
 					torre.mover(turnoBlancas);
-				} else {
-					System.out.println("Ficha no válida");
+				}  else if (colorF[0].equals(" bC ") || colorF[0].equals(" nC ")) {
+					Caballo caballo = new Caballo(colorF, posiMovimiento);				
+					String comparacionC= caballo.mover(turnoBlancas);
+					if (comparacionC.equals("true")) {
+						movimientoValido=true;
+					}				
+				}else {
 				}
-
+				}
 				Tablero.mostrar();
 				
 				turnoBlancas = !turnoBlancas; 
